@@ -15,5 +15,8 @@ public class HelloWorld {
 
         String myString = "This is my string value";
         System.out.println(myString);
+
+        long myNumber = 123;
+        System.out.println(myNumber);
     }
 }
