@@ -16,7 +16,8 @@ public class HelloWorld {
         String myString = "This is my string value";
         System.out.println(myString);
 
-        float myNumber = 123;
+//        float myNumber = (float) 3.14;
+        float myNumber = 3.14f;
         System.out.println(myNumber);
 
 //        int x = 5;
@@ -39,13 +40,16 @@ public class HelloWorld {
 
 //        int x = 3;
 //        int y = 4;
-//        y += x;
+//        y *= x;
+
 //        System.out.println(y);
 
         int x = 10;
         int y = 2;
         x /= y;
+        y -= x;
         System.out.println(x);
+        System.out.println(y);
 
 
     }
