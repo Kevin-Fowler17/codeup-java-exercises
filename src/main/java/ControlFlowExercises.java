@@ -129,7 +129,7 @@ public class ControlFlowExercises {
 
             System.out.printf("%nDo you want to enter another numerical grade from 0 to 100? ");
             done = input.next();
-        } while (done.equals("y"));
+        } while (done.equalsIgnoreCase("y"));
 
         input.close();
     }
