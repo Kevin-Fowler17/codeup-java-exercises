@@ -13,6 +13,10 @@ public class Bob {
             System.out.print("Q: ");
             question = input.nextLine();
 
+            if (question.equalsIgnoreCase("Go to your room")) {
+                break;
+            }
+
             if (question.endsWith("?")) {
                 // Bob answers 'Sure.' if you ask him a question. (the input ends with a question mark)
                 System.out.println("Sure.");
@@ -27,7 +31,7 @@ public class Bob {
                 System.out.println("Whatever.");
             }
 
-        } while (!question.equalsIgnoreCase("Go to your room"));
+        } while (true);
 
         input.close();
 
