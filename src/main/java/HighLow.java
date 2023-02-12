@@ -8,7 +8,6 @@ public class HighLow {
 
     public static int getNumberFromOneTo100(Scanner input){
 
-        String str = "";
         int guess = 0;
         int remaining = 5;
         int counter = 0;
@@ -53,7 +52,7 @@ public class HighLow {
 
         Scanner input = new Scanner(System.in);
 
-        int n = getNumberFromOneTo100(input);
+        getNumberFromOneTo100(input);
 
         input.close();
 
