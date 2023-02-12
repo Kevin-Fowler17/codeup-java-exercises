@@ -6,7 +6,6 @@ public class HighLow {
         return (int) (Math.random() * 100) + 1;
     }
 
-
     public static int getNumberFromOneTo100(Scanner input){
 
         String str = "";
@@ -20,21 +19,18 @@ public class HighLow {
         guess = input.nextInt();
 
         do {
-            remaining -= 1;
-            counter += 1;
 
-            if ((guess < 1 || guess > 100) && remaining > 0) {
+            if (remaining > 0 && remaining < 5) {
+                System.out.println("You have " + remaining + " guesses left. Guess again, enter an integer from 1 to 100: ");
+                guess = input.nextInt();
+            }
+
+            if ((guess < 1 || guess > 100) && remaining > 1) {
                 System.out.println("That is not a number from 1 to 100.");
-                System.out.print("You have " + remaining + " guesses left. Guess again, enter an integer from 1 to 100: ");
-                guess = input.nextInt();
-            } else if ((guess < randNum) && remaining > 0) {
+            } else if ((guess < randNum) && remaining > 1) {
                 System.out.println("HIGHER");
-                System.out.print("You have " + remaining + " guesses left. Guess again, enter an integer from 1 to 100: ");
-                guess = input.nextInt();
-            } else if ((guess > randNum) && remaining > 0) {
+            } else if ((guess > randNum) && remaining > 1) {
                 System.out.println("LOWER");
-                System.out.print("You have " + remaining + " guesses left. Guess again, enter an integer from 1 to 100: ");
-                guess = input.nextInt();
             } else if (guess == randNum){
                 System.out.println("GOOD GUESS!");
                 break;
@@ -42,6 +38,9 @@ public class HighLow {
                 System.out.println("That's five guesses, you lose. The number was " + randNum);
                 break;
             }
+
+            remaining -= 1;
+            counter += 1;
 
         } while (true);
 
