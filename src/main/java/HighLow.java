@@ -43,6 +43,7 @@ public class HighLow {
 
         } while (true);
 
+        System.out.println("Game over");
         return randNum;
     }
 
