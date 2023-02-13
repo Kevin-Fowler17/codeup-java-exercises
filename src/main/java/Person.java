@@ -2,7 +2,6 @@ public class Person {
 
     private String name;
 
-    // this is the constructor
     public Person(String name) {
         this.name = name;
     }
@@ -19,7 +18,7 @@ public class Person {
 
     public void sayHello(){
 //TODO: print a message to the console using the person's name
-        System.out.println("Hello " + name + ", how are you doing?");
+        System.out.println("Hello, " + name + ", how are you doing?");
     }
 
     public static void main(String[] args) {
