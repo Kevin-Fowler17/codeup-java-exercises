@@ -98,12 +98,11 @@ public class MethodsExercises {
             str = input.next();
         } while (str.equalsIgnoreCase("y"));
 
-        str = "";
-        int sides = 0;
+
         do {
             System.out.print("How many sides do you want on the dice? ");
-            sides = input.nextInt();
-            System.out.print("Roll the dice when your are ready? ");
+            int sides = input.nextInt();
+            System.out.print("Roll the dice when your are ready? (roll) ");
             str = input.next();
 
             if (str.equalsIgnoreCase("roll")) {
