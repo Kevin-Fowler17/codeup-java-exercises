@@ -6,6 +6,13 @@ public class Person {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
     public String getName(){
         //TODO: return the person's name
         return this.name;
