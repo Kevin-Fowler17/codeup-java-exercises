@@ -6,41 +6,57 @@ public class Input {
 
     private Scanner scanner;
 
+    public Input() {
+        scanner = new Scanner(System.in);
+    }
+
     public String getString() {
         return scanner.nextLine();
     }
-
-    public boolean yesNo() {
-        String input = scanner.nextLine();
-        return input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y");
+    public String getString(String prompt) {
+        System.out.print(prompt);
+        return getString();
     }
 
-    public int getInt(int min, int max) {
-        int input = scanner.nextInt();
-        if (input >= min && input <= max) {
-            return input;
-        } else {
-            System.out.println("Invalid input. Please enter a number between " + min + " and " + max + ".");
-            return getInt(min, max);
+    public boolean yesNo() {
+        String response = getString();
+        if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
+            return true;
         }
+        return false;
+    }
+    public boolean yesNo(String prompt) {
+        System.out.print(prompt);
+        return yesNo();
     }
 
     public int getInt() {
         return scanner.nextInt();
     }
 
-    public double getDouble(double min, double max) {
-        double input = scanner.nextDouble();
-        if (input >= min && input <= max) {
-            return input;
-        } else {
-            System.out.println("Invalid input. Please enter a number between " + min + " and " + max + ".");
-            return getDouble(min, max);
+    public int getInt(int min, int max) {
+        System.out.printf("Enter a number between %f and %f%n", min, max);
+        int anInt = getInt();
+        if(anInt < min || anInt > max) {
+            return getInt(min, max);
         }
+        return anInt;
     }
 
     public double getDouble() {
         return scanner.nextDouble();
     }
+
+    public double getDouble(double min, double max) {
+        System.out.printf("Enter a number between %f and %f%n", min, max);
+        double aDouble = getDouble();
+        if(aDouble < min || aDouble > max) {
+            return getDouble(min, max);
+        }
+        return aDouble;
+    }
+
+
+
 
 }
