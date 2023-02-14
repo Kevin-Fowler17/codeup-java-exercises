@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Arrays;
 
 public class ArrayLecture {
@@ -12,7 +10,7 @@ public class ArrayLecture {
         ages[0] = 42;
         ages[5] = 75;
 
-        Input input = new Input();
+//        Input input = new Input();
         System.out.print("How many elements?");
 //        int arrayLength = input.getInt():
 //        ages = new int[arrayLength];
