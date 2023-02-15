@@ -2,13 +2,12 @@ package movies;
 
 import util.Input;
 
-import java.util.Scanner;
-
 public class MoviesApplication {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        // don't need code below because calling the input package
+//        Scanner input = new Scanner(System.in);
 
         boolean ask = true;
 
@@ -33,14 +32,6 @@ public class MoviesApplication {
         Input input = new Input();
 
         return input.getInt(0, 5, "Enter your choice: ");
-    }
-
-    private static void showMoviesByChoice (String category) {
-        for(Movie movie : MoviesArray.findAll()) {
-            if(movie.getCategory().equalsIgnoreCase(category)) {
-                System.out.printf("%s -- %s\n", movie.getName(), movie.getCategory());
-            }
-        }
     }
 
     public static boolean filterByMovieChoice(int response) {
@@ -70,10 +61,19 @@ public class MoviesApplication {
             showMoviesByChoice("scifi");
             System.out.print("\n");
         } else {
+            System.out.println("Bye!");
             askAgain = false;
         }
 
         return askAgain;
+    }
+
+    private static void showMoviesByChoice (String category) {
+        for(Movie movie : MoviesArray.findAll()) {
+            if(movie.getCategory().equalsIgnoreCase(category)) {
+                System.out.printf("%s -- %s\n", movie.getName(), movie.getCategory());
+            }
+        }
     }
 
 }
