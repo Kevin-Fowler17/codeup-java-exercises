@@ -10,15 +10,17 @@ public class MoviesApplication {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println(optionsDisplay());
+        boolean ask = true;
 
-//        while(running) {
-//            System.out.println(returnMenuDisplay());
+        do {
 
-            int response = userChoice();
-//            running = executeUserChoice(response);
-//        }
+            System.out.println(optionsDisplay());
 
+            int userResponse = userChoice();
+
+            ask = filterByMovieChoice(userResponse);
+
+        } while (ask);
 
     }
 
@@ -29,18 +31,49 @@ public class MoviesApplication {
 
     public static int userChoice() {
         Input input = new Input();
-        System.out.println("Enter your choice: ");
-        int choice = input.getInt(0, 5);
 
-        return choice;
+        return input.getInt(0, 5, "Enter your choice: ");
     }
 
-//    private static int promptUserForChoice() {
-//        Input input = new Input();
-//        System.out.println("Enter your choice: ");
-//        int response = input.getInt(0, 5);
-//
-//        return response;
-//    }
+    private static void showMoviesByChoice (String category) {
+        for(Movie movie : MoviesArray.findAll()) {
+            if(movie.getCategory().equalsIgnoreCase(category)) {
+                System.out.printf("%s -- %s\n", movie.getName(), movie.getCategory());
+            }
+        }
+    }
+
+    public static boolean filterByMovieChoice(int response) {
+
+        boolean askAgain = true;
+
+        if (response == 1) {
+            System.out.print("\n");
+            for (Movie movie : MoviesArray.findAll()) {
+                System.out.printf("%s -- %s\n", movie.getName(), movie.getCategory());
+            }
+            System.out.print("\n");
+        } else if (response == 2) {
+            System.out.print("\n");
+            showMoviesByChoice("animated");
+            System.out.print("\n");
+        } else if (response == 3) {
+            System.out.print("\n");
+            showMoviesByChoice("drama");
+            System.out.print("\n");
+        } else if (response == 4) {
+            System.out.print("\n");
+            showMoviesByChoice("horror");
+            System.out.print("\n");
+        } else if (response == 5) {
+            System.out.print("\n");
+            showMoviesByChoice("scifi");
+            System.out.print("\n");
+        } else {
+            askAgain = false;
+        }
+
+        return askAgain;
+    }
 
 }
