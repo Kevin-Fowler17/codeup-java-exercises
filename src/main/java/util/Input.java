@@ -78,7 +78,7 @@ public class Input {
     }
 
     public boolean yesNo(String prompt){
-        System.out.println(prompt);
+        System.out.print(prompt);
         String response = this.sc.next();
         if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
             return true;
