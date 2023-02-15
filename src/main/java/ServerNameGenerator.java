@@ -9,7 +9,7 @@ public class ServerNameGenerator {
         public static void main(String[] args) {
 
             System.out.println("Here is your server name: ");
-            System.out.println(getRandomElement(adjectives) + " " + getRandomElement(nouns));
+            System.out.println(getRandomElement(adjectives) + "-" + getRandomElement(nouns));
 
         }
 
