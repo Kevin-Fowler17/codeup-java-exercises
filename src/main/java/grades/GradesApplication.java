@@ -10,9 +10,9 @@ public class GradesApplication {
 
     public static void main(String[] args) {
 
-
+        Input input = new Input();
         boolean cont = true;
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         HashMap<String, Student> students = new HashMap<>();
 
@@ -26,22 +26,21 @@ public class GradesApplication {
         bill.addGrade(75);
         bill.addGrade(85);
         bill.addGrade(95);
-        students.put("Bill345", kevin);
+        students.put("Bill345", bill);
 
         Student derek = new Student("Derek");
         derek.addGrade(75);
         derek.addGrade(85);
         derek.addGrade(95);
-        students.put("Derek678", kevin);
+        students.put("Derek678", derek);
 
         Student john = new Student("John");
         john.addGrade(75);
         john.addGrade(85);
         john.addGrade(95);
-        students.put("John901", kevin);
+        students.put("John901", john);
 
-//        do {
-
+        do {
 
             System.out.println("""
                     Welcome!
@@ -54,15 +53,17 @@ public class GradesApplication {
             }
 
             System.out.print("\n");
-            System.out.println("\nWhat student would you like to see more information on?\n\n>");
-            String userSelection = input.next();
+            System.out.println("\nWhat student would you like to see more information on?\n");
+            String userSelection = scanner.nextLine();
 
-             System.out.println(userSelection);
+            System.out.printf("\nName: %s - GitHub Username: %s%n", students.get(userSelection).getName() , userSelection);
+            System.out.printf("Current Average: %.2f%n", students.get(userSelection).getGradeAverage());
 
-//            cont = input.yesNo("Do you want to make another circle? ");
-//        } while (cont);
+            cont = input.yesNo("\nWould you like to see another student?\n\n");
 
+        } while (cont);
 
+        System.out.println("\nGoodbye, and have a wonderful day!");
 
     }
 }
