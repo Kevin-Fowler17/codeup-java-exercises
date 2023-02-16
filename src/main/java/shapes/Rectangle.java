@@ -2,8 +2,8 @@ package shapes;
 
 public class Rectangle extends Quadrilateral implements Measurable {
 
-    protected double length;
-    protected double width;
+//    protected double length;
+//    protected double width;
 
     public Rectangle(double length, double width) {
         super(length, width);
@@ -11,11 +11,13 @@ public class Rectangle extends Quadrilateral implements Measurable {
 
     @Override
     public double getPerimeter() {
+        System.out.println("Rectangle perimeter");
         return (2 * length) + (2 * width);
     }
 
     @Override
     public double getArea() {
+        System.out.println("Rectangle area");
         return length * width;
     }
 

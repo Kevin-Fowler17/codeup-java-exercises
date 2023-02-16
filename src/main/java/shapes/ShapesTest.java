@@ -12,17 +12,11 @@ public class ShapesTest {
         System.out.println("Box 1 area is: " + myShape.getArea());
         System.out.println("Box 1 permiter is: " + myShape.getPerimeter());
 
-        System.out.println(box1.getArea());
-        System.out.println(box1.getPerimeter());
-
 
         Square box2 = new Square(5);
         myShape = box2;
         System.out.println("Box 2 area is: " + myShape.getArea());
         System.out.println("Box 2 permiter is: " + myShape.getPerimeter());
-
-        System.out.println(box2.getArea());
-        System.out.println(box2.getPerimeter());
 
 
 

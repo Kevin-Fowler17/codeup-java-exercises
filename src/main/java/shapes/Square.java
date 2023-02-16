@@ -8,11 +8,13 @@ public class Square extends Quadrilateral {
 
     @Override
     public double getPerimeter() {
+        System.out.println("Square perimeter");
         return 4 * length;
     }
 
     @Override
     public double getArea() {
+        System.out.println("Square area");
         return length * length;
     }
 
