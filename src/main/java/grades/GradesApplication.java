@@ -56,8 +56,14 @@ public class GradesApplication {
             System.out.println("\nWhat student would you like to see more information on?\n");
             String userSelection = scanner.nextLine();
 
-            System.out.printf("\nName: %s - GitHub Username: %s%n", students.get(userSelection).getName() , userSelection);
-            System.out.printf("Current Average: %.2f%n", students.get(userSelection).getGradeAverage());
+            if (students.containsKey(userSelection)) {
+                System.out.printf("\nName: %s - GitHub Username: %s%n", students.get(userSelection).getName(), userSelection);
+                System.out.printf("Current Average: %.2f%n", students.get(userSelection).getGradeAverage());
+            } else {
+                System.out.println("""
+                                   
+                                   Sorry, no student found with the GitHub username of "pizza".""");
+            }
 
             cont = input.yesNo("\nWould you like to see another student?\n\n");
 
