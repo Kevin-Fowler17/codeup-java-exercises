@@ -4,9 +4,8 @@ import util.Input;
 
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.function.BiConsumer;
 
-public class GradesApplication {
+public class GradesApplication2 {
 
     public static void main(String[] args) {
 

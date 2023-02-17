@@ -2,33 +2,33 @@ package grades;
 
 import java.util.ArrayList;
 
-public class Student {
+public class Student2 {
 
     private String name;
     private ArrayList<Integer> grades;
 
-    public Student(String name) {
-        this.name = name;
+    public Student2(String nameToAdd) {
+        this.name = nameToAdd;
         this.grades = new ArrayList<>();
     }
 
-    // returns the student's name
-    public String getName() {
+
+    public String getName(){
         return this.name;
     }
 
-    // adds the given grade to the grades property
-    public void addGrade(int grade) {
+    public void addGrade(int grade){
         this.grades.add(grade);
     }
 
-    // returns the average of the students grades
-    public double getGradeAverage() {
-        int sum = 0 ;
+    public double getGradeAverage(){
+        int sum = 0;
         for (Integer grade : this.grades) {
             sum += grade;
         }
         return sum / this.grades.size();
     }
+
+
 
 }
