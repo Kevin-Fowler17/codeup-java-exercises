@@ -20,27 +20,27 @@ public class GradesApplication {
         kevin.addGrade(75);
         kevin.addGrade(85);
         kevin.addGrade(95);
-        students.put("Kevin012", kevin);
+        students.put("kevin012", kevin);
 
         Student bill = new Student("Bill");
         bill.addGrade(75);
         bill.addGrade(85);
         bill.addGrade(95);
-        students.put("Bill345", bill);
+        students.put("bill345", bill);
 
         Student derek = new Student("Derek");
         derek.addGrade(75);
         derek.addGrade(85);
         derek.addGrade(95);
-        students.put("Derek678", derek);
+        students.put("derek678", derek);
 
         Student john = new Student("John");
         john.addGrade(75);
         john.addGrade(85);
         john.addGrade(95);
-        students.put("John901", john);
+        students.put("john901", john);
 
-        do {
+
 
             System.out.println("""
                     Welcome!
@@ -53,6 +53,9 @@ public class GradesApplication {
             }
 
             System.out.print("\n");
+
+        do {
+
             System.out.println("\nWhat student would you like to see more information on?\n");
             String userSelection = scanner.nextLine();
 
@@ -72,4 +75,5 @@ public class GradesApplication {
         System.out.println("\nGoodbye, and have a wonderful day!");
 
     }
+
 }
