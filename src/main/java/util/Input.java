@@ -70,7 +70,7 @@ public class Input {
 
     public String getString(String prompt){
         System.out.println(prompt);
-        return getString();
+        return this.sc.nextLine();
     }
 
     public boolean yesNo(){
