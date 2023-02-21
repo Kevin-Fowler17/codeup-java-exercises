@@ -20,7 +20,7 @@ public class GroceryApp {
         while (createGroceryList) {
 
             do {
-                cont = input.yesNo("\nWould you like to enter a new item? ");
+                cont = input.yesNo("\nWould you like to enter a new item? (y/n): ");
 
                 if (cont) {
 
