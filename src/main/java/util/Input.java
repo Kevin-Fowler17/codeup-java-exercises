@@ -111,23 +111,21 @@ public class Input {
 
     public long getBinary() {
         System.out.println("Enter a binary number: ");
-        while (true) {
-            try {
-                return Long.valueOf(scanner.next(), 2);
-            } catch (NumberFormatException nfe) {
-                System.out.println("Invalid value entered, enter a binary number: ");
-            }
+        try {
+            return Long.valueOf(scanner.next(), 2);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Invalid value entered, enter a binary number: ");
+            return getBinary();
         }
     }
 
     public long getHex() {
         System.out.println("Enter a hexadecimal number: ");
-        while (true) {
-            try {
-                return Long.valueOf(scanner.next(), 16);
-            } catch (NumberFormatException nfe) {
-                System.out.println("Invalid value entered, enter a hexadecimal number: ");
-            }
+        try {
+            return Long.valueOf(scanner.next(), 16);
+        } catch (NumberFormatException nfe) {
+            System.out.println("Invalid value entered, enter a hexadecimal number: ");
+            return getHex();
         }
     }
 
