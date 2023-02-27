@@ -25,6 +25,4 @@ public class MavenExercise {
         System.out.println("Reversed: " + StringUtils.reverse(mavenExerciseText));
     }
 
-
-
 }
