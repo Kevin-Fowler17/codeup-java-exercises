@@ -1,27 +1,38 @@
-public class Student {
+import java.util.ArrayList;
 
-        public String name;
-        public String cohort;
+public class    Student {
 
-        public Student(String studentName) {
-            name = studentName;
-            cohort = "Unassigned";
+    private long id;
+    private String name;
+    private ArrayList<Integer> grades;
+
+    public Student(long id, String name) {
+        this.id = id;
+        this.name = name;
+        this.grades = new ArrayList<>();
+    }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public ArrayList<Integer> getGrades() {
+        return this.grades;
+    }
+
+    public void addGrade(int grade) {
+        this.grades.add(grade);
+    }
+
+    public double getGradeAverage() {
+        double sum = 0;
+        for (int grade: this.grades) {
+            sum += grade;
         }
-
-        public Student(String studentName, String assignedCohort) {
-            name = studentName;
-            cohort = assignedCohort;
-        }
-
-        public String getInfo() {
-            return String.format("name: %s, cohort: %s", name, cohort);
-        }
-
-        public static void main(String[] args) {
-            Student s1 = new Student("Student A");
-            Student s2 = new Student("Student B", "Voyagers");
-            System.out.println(s1.getInfo()); // "name: Student A cohort: Unassigned"
-            System.out.println(s2.getInfo()); // "name: Student B cohort: Voyagers"
-        }
-
+        return sum / this.grades.size() ;
+    }
 }

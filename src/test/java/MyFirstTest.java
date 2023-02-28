@@ -67,7 +67,7 @@ public class MyFirstTest {
     @Test
     public void testIfNull() {
         String language = null;
-        assertNull (language);
+        assertNull(language);
     }
 
     @Test
