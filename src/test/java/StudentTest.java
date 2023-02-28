@@ -23,7 +23,6 @@ public class StudentTest {
     @Test
     public void testGrades() {
 
-//        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(100, 95, 90));
         Integer [] numbers = {100, 95, 90};
 
         Student kevin = new Student(9999L, "Kevin");
